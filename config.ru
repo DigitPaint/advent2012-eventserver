@@ -9,7 +9,7 @@ if EventServer::Application.env == 'development'
   use Rack::Reloader, 0
 
   # Serve assets from /public
-  use Rack::Static, :urls => ["/javascripts"], :root => EventServer::Application.root(:public)
+  use Rack::Static, :urls => ["/assets"], :root => EventServer::Application.root(:public)
 end
 
 # Running thin :
