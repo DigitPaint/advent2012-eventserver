@@ -5,11 +5,10 @@ require 'sys/cpu'
 class LoadavgAction < Cramp::Action
   self.transport = :sse
 
-  on_start :send_latest_time
-  periodic_timer :send_latest_time, :every => 1
+  on_start :send_loadavg
+  periodic_timer :send_loadavg, :every => 1
 
-  def send_latest_time
-    # OS X code: out = `w | head -n1 | cut -d":" -f4`
+  def send_loadavg
     data = Sys::CPU.load_avg
     render data.to_json
   end
