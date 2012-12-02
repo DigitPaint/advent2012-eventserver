@@ -46,16 +46,26 @@ document.addEventListener("DOMContentLoaded", function () {
       
   // Setup data containers for the 3 load averages
   // Also specify the total number of points we want in the graph before discarding data
-  var data1 = {}, data5 = {}, data15 = {}, totalPoints = 200;
-      
-  data1["label"] = "1 min";
-  data1["data"] = [];
-
-  data5["label"] = "5 min";
-  data5["data"] = [];
-
-  data15["label"] = "15 min";
-  data15["data"] = [];
+  var data1 = {
+    "label" : "1 min",
+    "data": []
+  }, 
+  data5 = {
+    "label" : "5 min",
+    "data" : []    
+  }, 
+  data15 = {
+    "label" : "15 min",
+    "data" : []
+  }, 
+  totalPoints = 200;
+  
+  // Populate data
+  for(var i=0; i < totalPoints; i++){
+    data1["data"].push(null);
+    data5["data"].push(null);
+    data15["data"].push(null);    
+  }
       
   // This function adds value to a data array
   var addData = function(value, data) {
