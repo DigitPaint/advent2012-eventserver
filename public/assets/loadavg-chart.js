@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", function () {
     "label" : "15 min",
     "data" : []
   }, 
-  totalPoints = 200;
+  totalPoints = 100;
   
   // Populate data
   for(var i=0; i < totalPoints; i++){
