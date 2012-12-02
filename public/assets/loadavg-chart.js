@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
             
   var initEventSource = function(){        
     // Open a new EventSource (does not work cross-domain)
-    var source = new EventSource("/loadavg");
+    var source = new EventSource("../loadavg");
       
     // Listen to the "open" event; we log every time the browser
     // creates a new connection
